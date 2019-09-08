@@ -4,6 +4,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.Toast;
 
 import com.google.android.gms.auth.api.phone.SmsRetriever;
 import com.google.android.gms.common.api.CommonStatusCodes;
@@ -18,7 +20,7 @@ public class MySMSBroadcastReceiver extends BroadcastReceiver {
 
     private OTPReceiveListener otpReceiver = null;
 
-    MySMSBroadcastReceiver(OTPReceiveListener otpReceiveListener){
+    public void setListners(OTPReceiveListener otpReceiveListener){
         this.otpReceiver=otpReceiveListener;
     }
 
@@ -34,6 +36,8 @@ public class MySMSBroadcastReceiver extends BroadcastReceiver {
                     // Get SMS message contents
                     String message = (String) extras.get(SmsRetriever.EXTRA_SMS_MESSAGE);
                     if (otpReceiver != null) {
+                        Log.d("OTPP",message);
+                        Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
                         message = message.replace("<#> Your ExampleApp code is: ", "");
                         otpReceiver.onOTPReceived(message);
                     }

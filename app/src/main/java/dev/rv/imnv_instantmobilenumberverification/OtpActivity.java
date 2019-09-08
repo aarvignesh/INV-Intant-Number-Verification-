@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.content.IntentSender;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.credentials.Credential;
@@ -36,7 +37,8 @@ public class OtpActivity extends AppCompatActivity implements  GoogleApiClient.C
         setContentView(R.layout.activity_otp);
         mblno=findViewById(R.id.mblno);
         otpReceiver  = this;
-        new MySMSBroadcastReceiver(this);
+        smsBroadcast=new MySMSBroadcastReceiver();
+        smsBroadcast.setListners(this);
         GoogleApiClient mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)
                 .enableAutoManage(this, this)
@@ -79,8 +81,7 @@ public class OtpActivity extends AppCompatActivity implements  GoogleApiClient.C
         task.addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
-                // Successfully started retriever, expect broadcast intent
-                // ...
+                Toast.makeText(OtpActivity.this, "Good", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -111,7 +112,7 @@ public class OtpActivity extends AppCompatActivity implements  GoogleApiClient.C
 
     @Override
     public void onOTPReceived(String otp) {
-
+        Toast.makeText(this, "Verified", Toast.LENGTH_SHORT).show();
     }
 
     @Override
