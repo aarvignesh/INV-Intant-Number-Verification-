@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="#39393A"
+    tools:context=".FullscreenActivity">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:id="@+id/fullscreen_content_controls"
+            style="?metaButtonBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="#00000000"
+            android:orientation="vertical"
+            tools:ignore="UselessParent">
+
+            <Button
+                android:id="@+id/instant_activate"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_margin="10sp"
+                android:background="#119987"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Verify By Instant Verification" />
+            <Button
+                android:id="@+id/otp_activate"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_margin="10sp"
+                android:background="#119687"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Verify By OTP" />
+            <Button
+                android:id="@+id/missedcall_activate"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_margin="10sp"
+                android:background="#08a394"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Verify By Missed Call" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+    <TextView
+        android:id="@+id/small_title"
+        android:text="SYND \niNNOVATE"
+        android:textColor="#33b5e5"
+        android:textSize="20sp"
+        android:gravity="center_horizontal"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:id="@+id/input_fields"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textColor="#33b5e5"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_margin="10sp"
+            android:text="Get Started With Verifying your mobile number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:textColor="#33b5e5"
+            android:textColorHint="#33b5e5"
+            android:layout_margin="10sp"
+            android:hint="Enter Mobile number"
+            android:ems="10"
+            android:inputType="phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/fullscreen_content"
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:keepScreenOn="true"
+            android:text="SYND \niNNOVATE"
+            android:textColor="#33b5e5"
+            android:textSize="50sp"
+            android:textStyle="bold" />
+        <TextView
+            android:text="Touch to Begin....."
+            android:textColor="#33b5e5"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name='IMNV-(Instant Mobile Number Verification)'
