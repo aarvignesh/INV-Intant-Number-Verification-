@@ -3,4 +3,6 @@
 
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="FACEBOOK_APP_ID">388379515200530</string>
+    <string name="ACCOUNT_KIT_CLIENT_TOKEN">40fb3d8baca0bc422893f9f042121db7</string>
 </resources>

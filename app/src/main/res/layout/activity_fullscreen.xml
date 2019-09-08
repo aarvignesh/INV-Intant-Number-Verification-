@@ -29,15 +29,15 @@
                 android:id="@+id/instant_activate"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_margin="10sp"
-                android:background="#119987"
+                android:background="@color/gold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Verify By Instant Verification" />
+                android:text="Verify By WhatsApp" />
             <Button
                 android:id="@+id/otp_activate"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_margin="10sp"
-                android:background="#119687"
+                android:background="@color/gold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Verify By OTP" />
@@ -45,7 +45,7 @@
                 android:id="@+id/missedcall_activate"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_margin="10sp"
-                android:background="#08a394"
+                android:background="@color/gold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Verify By Missed Call" />
@@ -80,15 +80,16 @@
             android:text="Get Started With Verifying your mobile number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
-        <EditText
-            android:textColor="#33b5e5"
-            android:textColorHint="#33b5e5"
-            android:layout_margin="10sp"
-            android:hint="Enter Mobile number"
-            android:ems="10"
-            android:inputType="phone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+<!--        <EditText-->
+<!--            android:textColor="#33b5e5"-->
+<!--            android:textColorHint="#33b5e5"-->
+<!--            android:layout_margin="10sp"-->
+<!--            android:hint="Enter Mobile number"-->
+<!--            android:ems="10"-->
+<!--            android:inputType="phone"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"/>-->
+
     </LinearLayout>
     <LinearLayout
         android:id="@+id/fullscreen_content"
@@ -106,7 +107,7 @@
             android:textSize="50sp"
             android:textStyle="bold" />
         <TextView
-            android:text="Touch to Begin....."
+            android:text="Touch to Choose Your Mobile Number....."
             android:textColor="#33b5e5"
             android:gravity="center"
             android:layout_width="match_parent"
