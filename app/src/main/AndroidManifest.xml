@@ -9,8 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".OtpActivity"></activity>
-
+        <activity android:name=".SuccessActivity"></activity>
+        <activity android:name=".OtpActivity" />
         <activity android:name="com.facebook.accountkit.ui.AccountKitActivity" />
         <activity
             android:name=".FullscreenActivity"
@@ -23,13 +23,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <meta-data
             android:name="com.facebook.accountkit.ClientToken"
             android:value="@string/ACCOUNT_KIT_CLIENT_TOKEN" />
         <meta-data
             android:name="com.facebook.accountkit.FacebookAppEventsEnabled"
             android:value="false" />
-
         <meta-data
             android:name="com.facebook.accountkit.ApplicationName"
             android:value="@string/app_name" />
@@ -37,15 +37,16 @@
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/FACEBOOK_APP_ID" />
 
-        <receiver android:name=".MySMSBroadcastReceiver" android:exported="true">
+        <receiver
+            android:name=".MySMSBroadcastReceiver"
+            android:exported="true">
             <intent-filter>
-                <action android:name="com.google.android.gms.auth.api.phone.SMS_RETRIEVED"/>
+                <action android:name="com.google.android.gms.auth.api.phone.SMS_RETRIEVED" />
             </intent-filter>
         </receiver>
-
     </application>
-    <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

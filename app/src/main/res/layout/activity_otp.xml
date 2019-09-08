@@ -7,32 +7,57 @@
     android:background="@color/BgBlack"
     tools:context=".OtpActivity">
 
-    <TextView
-        android:id="@+id/mblno"
-        android:layout_width="158dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="172dp"
-        android:layout_marginTop="280dp"
-        android:layout_marginEnd="181dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@id/editText"
+    <Button
+        android:id="@+id/verify"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="33dp"
+        android:background="@color/gold"
+        android:text="Verify"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.46"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/otp_tv" />
+
+    <EditText
+        android:id="@+id/otp_tv"
+        android:layout_width="213dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="34dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textColor="#ffffff"
+        android:textColorHint="#ffffff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mblno" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="243dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="Detected Number:"
+        android:textColor="@color/gold"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="213dp"
+    <TextView
+        android:id="@+id/mblno"
+        android:layout_width="239dp"
         android:layout_height="45dp"
-        android:layout_marginStart="99dp"
-        android:layout_marginEnd="99dp"
-        android:layout_marginBottom="316dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintTop_toBottomOf="@id/mblno"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="59dp"
+        android:text="TextView"
+        android:textColor="@color/gold"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

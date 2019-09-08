@@ -234,6 +234,8 @@ printKeyHash();
                 // and pass it to your server and exchange it for an access token.
 
                 // Success! Start your next activity...
+                Intent intent=new Intent(getApplicationContext(),SuccessActivity.class);
+                startActivity(intent);
 //                goToMyLoggedInActivity();
             }
 

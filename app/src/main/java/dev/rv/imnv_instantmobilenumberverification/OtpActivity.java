@@ -9,6 +9,9 @@ import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +33,7 @@ public class OtpActivity extends AppCompatActivity implements  GoogleApiClient.C
     private TextView mblno;
     private MySMSBroadcastReceiver.OTPReceiveListener otpReceiver;
     MySMSBroadcastReceiver smsBroadcast ;
+    public static EditText otpet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +42,17 @@ public class OtpActivity extends AppCompatActivity implements  GoogleApiClient.C
         mblno=findViewById(R.id.mblno);
         otpReceiver  = this;
         smsBroadcast=new MySMSBroadcastReceiver();
+        otpet=findViewById(R.id.otp_tv);
+        Button verifyy=findViewById(R.id.verify);
+        verifyy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(),SuccessActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
         smsBroadcast.setListners(this);
         GoogleApiClient mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)
@@ -112,11 +127,16 @@ public class OtpActivity extends AppCompatActivity implements  GoogleApiClient.C
 
     @Override
     public void onOTPReceived(String otp) {
+        otpet.setText(otp);
         Toast.makeText(this, "Verified", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onOTPTimeOut() {
 
+    }
+
+    public static void setotp(String otp){
+        otpet.setText(otp);
     }
 }

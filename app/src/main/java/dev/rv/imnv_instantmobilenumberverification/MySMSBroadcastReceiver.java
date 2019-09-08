@@ -18,15 +18,27 @@ import com.google.android.gms.common.api.Status;
  */
 public class MySMSBroadcastReceiver extends BroadcastReceiver {
 
-    private OTPReceiveListener otpReceiver = null;
+    private OTPReceiveListener otpReceiver ;
 
     public void setListners(OTPReceiveListener otpReceiveListener){
+        Log.d("OTPP","list set");
         this.otpReceiver=otpReceiveListener;
     }
 
 
     @Override
     public void onReceive(Context context, Intent intent) {
+        Log.d("OTPP","rece");
+        Bundle extrass = intent.getExtras();
+        Status statuss = (Status) extrass.get(SmsRetriever.EXTRA_STATUS);
+
+        String messagee = (String) extrass.get(SmsRetriever.EXTRA_SMS_MESSAGE);
+        messagee = messagee.replace("<#> Your ExampleApp code is: ", "");
+        messagee=messagee.replace("yJRwwXUWvud","");
+        OtpActivity.setotp(messagee);
+//        otpReceiver.onOTPReceived(messagee);
+
+        Log.d("OTPP",messagee);
         if (SmsRetriever.SMS_RETRIEVED_ACTION.equals(intent.getAction())) {
             Bundle extras = intent.getExtras();
             Status status = (Status) extras.get(SmsRetriever.EXTRA_STATUS);
