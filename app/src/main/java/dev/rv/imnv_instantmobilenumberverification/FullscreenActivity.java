@@ -65,7 +65,7 @@ public class FullscreenActivity extends AppCompatActivity {
     private final Handler mHideHandler = new Handler();
     private View mContentView;
     private View inputpalate;
-    Button fbverify;
+    Button fbverify,otp;
     public static int APP_REQUEST_CODE = 99;
     private View smallTitle;
     private final Runnable mHidePart2Runnable = new Runnable() {
@@ -127,20 +127,24 @@ public class FullscreenActivity extends AppCompatActivity {
         mContentView = findViewById(R.id.fullscreen_content);
         inputpalate=findViewById(R.id.input_fields);
         fbverify=findViewById(R.id.instant_activate);
-//        getphno=findViewById(R.id.getphno_btn);
+        otp=findViewById(R.id.otp_activate);
         smallTitle=findViewById(R.id.small_title);
         smallTitle.setVisibility(View.GONE);
         inputpalate.setVisibility(View.GONE);
-//getphno.setOnClickListener(new View.OnClickListener() {
-//    @Override
-//    public void onClick(View view) {
-//
-//    }
-//});
+//        AppSignatureHelper appSignatureHelper=new AppSignatureHelper(getApplicationContext());
+//        Log.d("SIGN",appSignatureHelper.getAppSignatures().toString());
+
         fbverify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 phoneLogin(mContentView);
+            }
+        });
+        otp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(),OtpActivity.class);
+                startActivity(intent);
             }
         });
         AccessToken accessToken = AccountKit.getCurrentAccessToken();
